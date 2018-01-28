@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle:400,700">
+    <link rel="stylesheet" href="/static/fonts/font-awesome.min.css">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header"><a class="navbar-brand" href="#">FANTASY NBA</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li role="presentation"><a href="#">All-Star Game 2018</a></li>
+                    <li role="presentation"><a href="#">All Players</a></li>
+                    <li role="presentation"><a href="#">All Franchises</a></li>
+                </ul><button class="btn btn-primary navbar-btn navbar-right" type="button" style="font-size:15px;font-family:'News Cycle', sans-serif;margin-top:10px;margin-bottom:10px;">Login </button></div>
+        </div>
+    </nav>
+    <ol class="breadcrumb">
+        <li><a href="#"><span>Women </span></a></li>
+        <li><a href="#"><span>Men</span></a></li>
+        <li class="active"><span>Store </span></li>
+    </ol>
+    <div class="container">
+        <div class="row product">
+            <div class="col-md-8 col-md-offset-0"><img class="img-responsive" src="/static/img/nba5.jpg" alt="NBA Jerseys" style="width:630px;height:380px;"></div>
+            <div class="col-lg-offset-1 col-md-3" style="width:300px;margin:10px;margin-right:0px;margin-left:0px;padding-left:10px;padding-right:0px;">
+                <h2 class="text-justify" style="width:280px;margin-bottom:0px;">Appreciation to our fans for being the greatest stakeholders</h2>
+                <hr>
+                <p class="text-justify" style="width:280px;">Fans are stakeholders that are a high priority to the Fantasy NBA because of the large size of this group. We appreciate all our fans. and so we are offering a free jersey for your patronage</p><select style="margin-left:0px;"><option value="" selected="">Chose Your Size</option><option value="xxl">XXL</option><option value="xl">XL</option><option value="m">M</option><option value="s">S</option></select>
+                <hr><button class="btn btn-primary btn-block" type="button">Click to get a free Jersey</button></div>
+        </div>
+        <div class="page-header">
+            <h3>2018 FANTASY NBA All-Star Roster</h3>
+        </div>
+        <p>The voters have spoken.Now it’s time for LeBron James and Stephen Curry to continue their rivalry and&nbsp;go to work as the captains responsible for leading thier camp to victory for the&nbsp;<a href="http://www.nba.com/allstar#/"><strong>67th All-Star Game</strong></a>.
+            </p>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>East </th>
+                        <th>West </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lebron James</td>
+                        <td>Steph Curry</td>
+                    </tr>
+                    <tr>
+                        <td>Kyrie Irving</td>
+                        <td>Giannis Antetokoumpo</td>
+                    </tr>
+                    <tr>
+                        <td>Kevin Durant</td>
+                        <td>DeMar DeRozan</td>
+                    </tr>
+                    <tr>
+                        <td>DeMarcus Cousins</td>
+                        <td>Joel Embid</td>
+                    </tr>
+                    <tr>
+                        <td>Anthony Davis</td>
+                        <td>James Harden</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-header">
+            <h3>Reviews<button class="btn btn-primary write-review" type="button">Write a review</button></h3>
+        </div>
+        <div class="media">
+            <div class="media-body">
+                <h4 class="media-heading">Love this!</h4>
+                <div><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i></div>
+                <p>The All-Star game this year is going to be amazing</p>
+                <p><span class="reviewer-name"><strong>Jude D.</strong></span><span class="review-date">7 Jan 2018</span></p>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-body">
+                <h4 class="media-heading">Love the Staples Center</h4>
+                <div><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                <p>Now Hollywood and the NBA come together...love this venue</p>
+                <p>Simon K. <span class="review-date">17 Jan 2018</span></p>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="container">
+            <hr>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h5>FantasyNba© 2018</h5>
+                </div>
+                <div class="col-sm-6 social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

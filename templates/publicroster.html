@@ -1,0 +1,120 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+    <div class="row divider green">
+        <div class="col-md-12"></div>
+    </div>
+    <div class="row banner menu">
+        <div class="col-md-11 col-md-offset-1 padding-none">
+            <h1>{{ franchise.name }}
+            <figure class="creator">
+                <img src="{{ creator.picture}}">
+                <figcaption>{{ creator.name }}</figcaption>
+            </figure>
+            </h1>
+
+        </div>
+    </div>
+    <div class="row padding-top padding-bottom">
+        <div class="col-md-11 padding-none">
+
+        </div>
+        <div class="col-md-7"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                             <li> <strong> {{ message }} </strong> </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+    {% if roster !=[] %}
+        <div class="row">
+            <div class="col-md-2">
+                <h2>Small Forward</h2>
+                    {% for r in roster %}
+                        {% if r.position == 'Small Forward' %}
+                            <div class="menu-item">
+                                <h3>{{r.name}}</h3>
+                                <p>{{r.height}}</p>
+                                <p class="menu-price">{{r.weight}}</p>
+                                <p>{{r.ppg}}</p>
+                                <p>{{r.image}}</p>
+                                <p>{{r.youtube_url}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+            </div>
+            <div class="col-md-2">
+                <h2>Point Guard</h2>
+                    {% for r in roster %}
+                        {% if r.position == 'Point Guard' %}
+                        <div class="menu-item">
+                                <h3>{{r.name}}</h3>
+                                <p>{{r.height}}</p>
+                                <p class="menu-price">{{r.weight}}</p>
+                                <p>{{r.ppg}}</p>
+                                <p>{{r.image}}</p>
+                                <p>{{r.youtube_url}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+            </div>
+            <div class="col-md-2">
+                <h2>Shooting Guard</h2>
+                    {% for r in roster %}
+                        {% if r.position == 'Shooting Guard' %}
+                        <div class="menu-item">
+                                <h3>{{r.name}}</h3>
+                                <p>{{r.height}}</p>
+                                <p class="menu-price">{{r.weight}}</p>
+                                <p>{{r.ppg}}</p>
+                                <p>{{r.image}}</p>
+                                <p>{{r.youtube_url}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            <div class= "row">
+                <div class="col-md-2">
+                    <h2>Power Forward</h2>
+                    {% for r in roster %}
+                        {% if r.position == 'Power Forward' %}
+                        <div class="menu-item">
+                                <h3>{{r.name}}</h3>
+                                <p>{{r.height}}</p>
+                                <p class="menu-price">{{r.weight}}</p>
+                                <p>{{r.ppg}}</p>
+                                <p>{{r.image}}</p>
+                                <p>{{r.youtube_url}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="col-md-2">
+                    <h2>Center</h2>
+                    {% for r in roster %}
+                        {% if r.position == 'Center' %}
+                        <div class="menu-item">
+                                <h3>{{r.name}}</h3>
+                                <p>{{r.height}}</p>
+                                <p class="menu-price">{{r.weight}}</p>
+                                <p>{{r.ppg}}</p>
+                                <p>{{r.image}}</p>
+                                <p>{{r.youtube_url}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+

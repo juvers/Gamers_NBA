@@ -1,0 +1,77 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	<div class="row divider green">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h1>Edit a Player Profile/h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="#" method = "post">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type ="text" maxlength="100" class="form-control" name="name" value="{{player.name }}">
+
+					<label for="age">Age:</label>
+					<input type ="text" maxlength="10" class="form-control" name="age" value="{{player.age }}">
+
+					<label for="price">Price:</label>
+					<div class="input-group">
+						<div class="input-group-addon">$</div>
+						<input type ="text" maxlength="10" class="form-control" name="price" value="{{player.price}}">
+					</div>
+
+					<label for="name">Height:</label>
+					<input type ="text" maxlength="100" class="form-control" name="height" value="{{player.height }}">
+
+					<label for="name">Weight:</label>
+					<input type ="text" maxlength="100" class="form-control" name="weight" value="{{player.name }}">
+
+					<label for="name">Image:</label>
+					<input type ="file" class="form-control" name="image" value="{{player.image }}">
+
+					<!-- <label for="name">You Tube Highlights:</label>
+					<input type ="file"  class="form-control" name="youtube_url" value="{{player.youtube_url }}">
+ -->
+
+					<label for="position">Position:</label>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="position" id="course1" value="Small Forward" {% if player.position == 'Small Forward'%}checked{%endif%}>Small Forward
+					  </label>
+					</div>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="position" id="course2" value="Point Guard" {% if player.position == 'Point Guard' %}checked{%endif%}>Point Guard
+					  </label>
+					</div>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="position" id="course3" value="Shooting Guard" {% if player.position == 'Shooting Guard'%}checked{%endif%}>Shooting Guard
+					  </label>
+					</div>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="position" id="course4" value="Power Forward" {%if player.position =='Power Forward'%}checked{%endif%}>Power Forward
+					  </label>
+					</div>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="position" id="course4" value="Center" {%if player.position =='Center'%}checked{%endif%}>Center
+					  </label>
+					</div>
+					<button type="submit" class="btn btn-default" id="submit" type="submit">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
+					<a href = '{{url_for('displayFranchises')}}'>
+						<button class="btn btn-default delete">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}
