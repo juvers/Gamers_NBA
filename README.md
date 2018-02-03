@@ -35,7 +35,7 @@ Vagrant is the software that configures the VM and lets you share files between 
 
 From the terminal, run:
 
-    git clone https://github.com/udacity/OAuth2.0 GamersNBA
+    git clone https://github.com/judekuti/Gamers_NBA.git GamersNBA
 
 This will give you a directory named **GamersNBA** complete with the source code for the flask application, a vagrantfile, and a bootstrap.sh file for installing all of the necessary tools. 
 
