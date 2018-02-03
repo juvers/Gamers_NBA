@@ -1,22 +1,21 @@
-# OAuth2.0
-Starter Code for Auth&amp;Auth course
-# Installing the Vagrant VM for ud330 - Authentication & Authorization
+# Gamers NBA CRUD App
 
-**Note: If you already have a vagrant machine installed from previous Udacity courses skip to the 'Fetch the Source Code and VM Configuration' section**
+---
 
-In Lessons 2,3 and 4 of this course, you'll use a virtual machine (VM) to run a web server and a web app that uses it. The VM is a Linux system that runs on top of your own machine.  You can share files easily between your computer and the VM.
+### Project Summary
+This project employs the Flask framework to develop a RESTful web application. SQLAlchemy a severless database is the persistent storage for data populated.
+Authentication was guaranteed using OAuth2 to provide further CRUD functionality on the application. Facebook and Google Accounts authentication were used.
 
-We're using the Vagrant software to configure and manage the VM. Here are the tools you'll need to install to get it running:
 
-### Git
+---
 
-If you don't already have Git installed, [download Git from git-scm.com.](http://git-scm.com/downloads) Install the version for your operating system.
+## Quick start
+#### Requirements
+- Python
+- Virtual Box
+- Vagrant
 
-On Windows, Git will provide you with a Unix-style terminal and shell (Git Bash).  
-(On Mac or Linux systems you can use the regular terminal program.)
-
-You will need Git to install the configuration for the VM. If you'd like to learn more about Git, [take a look at our course about Git and Github](http://www.udacity.com/course/ud775).
-
+## Installations
 ### VirtualBox
 
 VirtualBox is the software that actually runs the VM. [You can download it from virtualbox.org, here.](https://www.virtualbox.org/wiki/Downloads)  Install the *platform package* for your operating system.  You do not need the extension pack or the SDK. You do not need to launch VirtualBox after installing it.
@@ -36,16 +35,15 @@ Vagrant is the software that configures the VM and lets you share files between 
 
 From the terminal, run:
 
-    git clone https://github.com/udacity/OAuth2.0 oauth
+    git clone https://github.com/udacity/OAuth2.0 GamersNBA
 
-This will give you a directory named **oauth** complete with the source code for the flask application, a vagrantfile, and a bootstrap.sh file for installing all of the necessary tools. 
+This will give you a directory named **GamersNBA** complete with the source code for the flask application, a vagrantfile, and a bootstrap.sh file for installing all of the necessary tools. 
 
 ## Run the virtual machine!
 
-Using the terminal, change directory to oauth (**cd oauth**), then type **vagrant up** to launch your virtual machine.
+Using the terminal, change directory to oauth (**cd GamersNBA**), then type **vagrant up** to launch your virtual machine.
 
-
-## Running the Restaurant Menu App
+## Running the GamersNBA App
 Once it is up and running, type **vagrant ssh**. This will log your terminal into the virtual machine, and you'll get a Linux shell prompt. When you want to log out, type **exit** at the shell prompt.  To turn the virtual machine off (without deleting anything), type **vagrant halt**. If you do this, you'll need to run **vagrant up** again before you can log into it.
 
 
@@ -53,8 +51,66 @@ Now that you have Vagrant up and running type **vagrant ssh** to log into your V
 
 Type **ls** to ensure that you are inside the directory that contains project.py, database_setup.py, and two directories named 'templates' and 'static'
 
-Now type **python database_setup.py** to initialize the database.
+Now type **python db_setup.py** to initialize the database.
 
-Type **python lotsofmenus.py** to populate the database with restaurants and menu items. (Optional)
+Type **python gamersnba.py** to populate the database with restaurants and menu items. (Optional)
 
-Type **python project.py** to run the Flask web server. In your browser visit **http://localhost:5000** to view the restaurant menu app.  You should be able to view, add, edit, and delete menu items and restaurants.
+Type **python app.py** to run the Flask web server. In your browser visit **http://localhost:5000** to view the Gamers NBA app.  You should be able to view, add, edit, and delete menu players and franchises. Now you are a franchise owner :smiley:
+
+
+## Get Google Client ID
+- Visit[https://console.developers.google.com/Google](https://console.developers.google.com/Google)
+- Sign up or Login if prompted
+- Go to Credentials
+- Select Create Crendentials > OAuth Client ID
+- Select Web application
+- Enter name 'Item-Catalog'
+- Authorized JavaScript origins = 'http://localhost:5000'
+- Authorized redirect URIs = 'http://localhost:5000/login' && 'http://localhost:5000/gconnect'
+- Select Create
+- Copy the Client ID and paste it into the data-clientid in login.html
+- On the Dev Console Select Download JSON
+- Rename JSON file to client_secrets.json
+- Place JSON file in this item-catalog directory
+- Run application using python app.py
+
+#### Environment Set-Up
+- Installation set-up require Unix-Style Terminal or Git Bash Terminal for windows
+- Download VirtualBox [virtualbox.org](here)
+- Install Vagrant [vagrantup.com](here)
+    > Note to make a firewall exception or allow permissions for these downloads
+- Check for successful download with `vagrant --version`
+- Navigate into the 'vagrant' directory, run ```vagrant up```.
+- SSH to the virtual machine with ```vagrant ssh```.
+
+#### Run the program
+1. Launch the VM:
+    a. `vagrant up`
+    b. `vagrant ssh`
+2. Within the VM, navigate to `cd /vagrant`
+3. Execute the database orm first with `python db_setup.py`
+4. Populate the database with an initial set of data with `python gamersnba.py`
+5. Execute the program with `python app.py`
+
+---
+
+
+## JSON Endpoints
+ The following are open to the public:
+
+franchise JSON: `/franchise/JSON`
+    - Displays all franchises.
+
+franchise/roster JSON: `'/franchise/<int:franchise_id>/roster/JSON'`
+   - Displays the roster of a specific franchise
+
+ Category Items JSON: `/franchise/<int:franchise_id>/roster/<int:player_id>/JSON`
+   -Displays the profile of a specific player belonging to a specific franchise
+
+
+## References
+- [https://www.python-course.eu](https://www.python-course.eu/index.php)
+- [http://www.sqlalchemy.org/](http://www.sqlalchemy.org/)
+- [https://www.python-course.eu/index.php](https://www.python-course.eu/index.php)
+- [http://flask.pocoo.org/](http://flask.pocoo.org/)
+
