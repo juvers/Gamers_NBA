@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from dbase_setup import Franchise, Base, Player, User
+from dbase_setup import *
 
 engine = create_engine('sqlite:///gamersnba.db')
 
