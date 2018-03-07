@@ -3,7 +3,7 @@
 ---
 
 ### Project Summary
-This project employs the Flask framework to develop a RESTful web application. SQLAlchemy a severless database is the persistent storage for data populated.
+This project employs the Flask framework to develop a RESTful web application. SQLAlchemy is the persistent storage for data populated.
 Authentication was guaranteed using OAuth2 to provide further CRUD functionality on the application. Facebook and Google Accounts authentication were used.
 
 
